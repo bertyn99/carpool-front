@@ -1,14 +1,7 @@
 
 import React from 'react';
 
-export type cardInfoType = {
-    url: string;
-    urlalt: string;
-    title: string;
-    text1: string;
-    text2: string;
-    text3: string;
-}
+import type { cardInfoType } from '../../types/types';
 
 interface Props {
     cardInfo: cardInfoType;

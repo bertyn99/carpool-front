@@ -1,6 +1,7 @@
-import HomeCard from '@/components/homecard/Homecard';
 import React from 'react';
-import type { cardInfoType } from '@/components/homecard/Homecard';
+import HomeCard from '../../components/homecard/Homecard';
+import type { cardInfoType } from '../../types/types';
+
 const Home = () => {
     const cardInfo: cardInfoType = {
         url: "https://picsum.photos/200/300",
