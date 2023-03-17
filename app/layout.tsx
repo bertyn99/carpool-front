@@ -27,13 +27,23 @@ const MontserratAlt1 = localFont({
   variable: '--font-MontserratAlt1'
 })
 
+const Helvetica = localFont({
+  src: [
+    {
+      path: './webfonts/Helvetica-medium.ttf',
+      weight: '400',
+      style: 'normal'
+    }
+  ]
+})
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${MontserratAlt1.variable} font-sans`}>
+    <html lang="en" className={`${MontserratAlt1.variable} font-sans ${Helvetica.variable} font-sans`}>
       <div className='w-full h-screen flex justify-center items-center'>
         <div role="status">
           <svg aria-hidden="true" className="w-16 h-16 mr-2 text-light-green animate-spin dark:text-light-green fill-dark-green" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
