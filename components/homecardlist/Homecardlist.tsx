@@ -13,9 +13,9 @@ export const Homecardlist = ({cardInfoList, title}:Props) => {
       <h2 className='text-center font-montserrat text-xl tracking-tight'>{title}</h2>
       <div className='homecards flex text-center content-center justify-center'>
         {
-          cardInfoList.map((cardInfo) => {
+          cardInfoList.map((cardInfo, idx) => {
             return (
-                <Homecard cardInfo={cardInfo}/>
+                <Homecard cardInfo={cardInfo} key={idx}/>
             )
           })
         }

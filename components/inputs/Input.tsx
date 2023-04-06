@@ -1,7 +1,5 @@
 import React, { FC, InputHTMLAttributes, SetStateAction, useState } from 'react';
 import { FaRegEnvelope, FaEye } from 'react-icons/fa';
-import { RegisterOptions } from "react-hook-form";
-import { IconType } from 'react-icons';
 
 interface props extends InputHTMLAttributes<HTMLInputElement> { label: string; type: string; icon: string; }
 
@@ -26,7 +24,6 @@ const Input: React.FC<props> = ({ label, type, icon }) => {
                 <FaEye />
             );
         }
-
         return null
     }
 

@@ -1,11 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Input from '../../components/inputs/Input'
-import { useForm } from "react-hook-form";
 
 const SignIn = () => {
-    const { register, handleSubmit } = useForm();
 
     return (
         <>

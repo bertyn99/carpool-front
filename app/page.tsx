@@ -1,10 +1,6 @@
 'use client';
 
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
 import './page.module.css'
-import Input from '../components/inputs/Input'
-
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Homecardlist } from '@/components/homecardlist/Homecardlist';
@@ -39,12 +35,8 @@ export default function Home() {
     },
   ];
   return (
-    <>
       <div className='w-full h-screen flex flex-col justify-center items-center'>
-        <Homecardlist cardInfoList={cardInfoList} title="Everything to know about CarPool"/>
-        <Input label="Email" type="email" icon="Email" />
-        <Input label="Password" type="password" icon="Password" />        
+        <Homecardlist cardInfoList={cardInfoList} title="Everything to know about CarPool"/>  
       </div>
-    </>
   ) 
 }
