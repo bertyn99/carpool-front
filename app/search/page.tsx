@@ -1,6 +1,7 @@
 import React from 'react';
 
 import TripsCardList from '@/components/tripscardlist/Tripscardlist';
+import Input from '@/components/inputs/Input';
 
 const Search = () => {
     
@@ -9,26 +10,29 @@ const Search = () => {
         {
             url: "https://picsum.photos/200/300",
             urlalt: "car",
-            NameFirst: "testFirst",
-            NameLast: "testLast",
+            NameFirst: "Bouet",
+            NameLast: "Valentin",
             StartDate: "11h00",
-            EndDate: "15h30"
+            EndDate: "15h30",
+            Price: "25"
         },
         {
             url: "https://picsum.photos/200/300",
             urlalt: "car",
-            NameFirst: "testFirst",
-            NameLast: "testLast",
+            NameFirst: "Merde",
+            NameLast: "Lucas",
             StartDate: "11h00",
-            EndDate: "15h30"
+            EndDate: "15h30",
+            Price: "25"
         },
         {
             url: "https://picsum.photos/200/300",
             urlalt: "car",
-            NameFirst: "testFirst",
-            NameLast: "testLast",
+            NameFirst: "Droguer",
+            NameLast: "Douglas",
             StartDate: "11h00",
-            EndDate: "15h30"
+            EndDate: "15h30",
+            Price: "25"
         },
       ];
       return (

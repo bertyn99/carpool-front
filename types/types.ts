@@ -10,6 +10,7 @@ export type cardInfoType = {
 export type CardTripType = {
     url: string; 
     urlalt: string;
+    Price: string;
     NameFirst: string;
     NameLast: string; 
     StartDate: string;
