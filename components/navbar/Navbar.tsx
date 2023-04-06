@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
   <nav className="font-montserrat bg-light-green border-gray-200 px-2 sm:px-4 py-2.5 ">
     <div className="container flex flex-wrap items-center justify-between mx-auto">
-      <a href='/'><Image className='flex items-center m-auto' width="80" height="180" src="/logo.png" alt="" />
+          <a href='/'> {/* <Image className='flex items-center m-auto' width="80" height="180" src="/logo.png" alt="" /> */}
             <span className="text-xl tracking-tight">CAR</span>
             <span className="text-white text-xl tracking-tight">POOL</span>
           </a>
@@ -18,7 +18,7 @@ const Navbar = () => {
             <Link className="block py-2 pl-3 pr-4 text-base" href="/" >Home</Link>
             <Link className="block py-2 pl-3 pr-4 text-base" href="/about">About</Link>
             <Link className="block py-2 pl-3 pr-4 text-base" href="/signin">SignIn</Link>
-            <Link className="block py-2 pl-3 pr-4 text-base" href="/signup">LogIn</Link>
+            <Link className="block py-2 pl-3 pr-4 text-base" href="/signup">SignUp</Link>
         </ul>
       </div>
     </div>
