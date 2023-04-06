@@ -23,7 +23,6 @@ const Input = forwardRef<Ref, props>(({ label, type, icon, value, onChange }, re
                 <FaEye fill="text-dark-green" />
             );
         }
-
         return null
     }
 
