@@ -44,10 +44,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${MontserratAlt1.variable} font-sans ${Helvetica.variable} font-sans`}>    
+
+    <html lang="en" className={`${MontserratAlt1.variable} font-sans  font-sans`}>
       <head />
-      <body>  
-      <Navbar />
+      <body className='text-dark-green bg-cream'>
+        <Navbar />
         {children}
       </body>
     </html>
