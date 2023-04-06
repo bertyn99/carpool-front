@@ -1,6 +1,10 @@
+import Modifyprofile from '@/components/modifyProfile/Modifyprofile';
 import React from 'react';
 
 const Profile = () => {
+    const onClickModify = () => {
+        console.log("modify");
+    }
     return (
         <div className="w-full lg:w-4/12 px-4 mx-auto">
             <div className="relative flex flex-col bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
@@ -36,15 +40,14 @@ const Profile = () => {
                     </div>
                 <div className="py-10 border-t border-blueGray-200 text-center">
                     <div className="flex flex-wrap justify-center">
-                    <div className="w-full lg:w-9/12 px-4">
-                        <button className="bg-dark-green text-white">
+                        <Button className="bg-dark-green text-white">
                         Modify Profile
-                        </button>
-                    </div>
+                        </Button>
                     </div>
                 </div>
                 </div>
             </div>
+            <Modifyprofile/>
         </div>
     );
 };
