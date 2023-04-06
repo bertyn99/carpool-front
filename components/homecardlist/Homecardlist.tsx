@@ -3,19 +3,19 @@ import React from 'react';
 import Homecard from '../homecard/Homecard';
 
 interface Props {
-    title: string;
-    cardInfoList: cardInfoType[];
+  title: string;
+  cardInfoList: cardInfoType[];
 }
 
-export const Homecardlist = ({cardInfoList, title}:Props) => {
+export const Homecardlist = ({ cardInfoList, title }: Props) => {
   return (
     <>
-      <h2 className='text-center font-montserrat text-xl tracking-tight'>{title}</h2>
+      <h2 className='text-center font-montserrat text-xl tracking-tight text-dark-green'>{title}</h2>
       <div className='homecards flex text-center content-center justify-center'>
         {
           cardInfoList.map((cardInfo) => {
             return (
-                <Homecard cardInfo={cardInfo}/>
+              <Homecard cardInfo={cardInfo} />
             )
           })
         }
