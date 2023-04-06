@@ -5,4 +5,13 @@ export type cardInfoType = {
     text1: string;
     text2: string;
     text3: string;
-}
+};
+
+export type CardTripType = {
+    url: string; 
+    urlalt: string;
+    NameFirst: string;
+    NameLast: string; 
+    StartDate: string;
+    EndDate: string;
+};
