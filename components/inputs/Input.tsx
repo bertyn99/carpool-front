@@ -12,33 +12,34 @@ const Input: React.FC<props> = ({ label, type, icon }) => {
         setValue(event.target.value);
     }
 
-    const Icons = (icon: string) => {
-        console.log(icon)
-        if (icon == "") {
-          return (
+    const Icons = ({ name }: { name: string }) => {
+        if (name === "") {
+            return (
                 <></>
             );
-        } else if(icon == "Email") {
+        } else if (name == "Email") {
             return (
                 <FaRegEnvelope />
             );
-        } else if(icon == "Password") {
+        } else if (name == "Password") {
             return (
                 <FaEye />
             );
         }
+
+        return null
     }
 
     return (
         <div className='flex flex-col'>
             <label className='font-montserrat text-dark-green mb-2'>{label}</label>
             <div className='flex flex-row'>
-            <input type={type} value={value} onChange={handleChange}
-                className="bg-brown/25 rounded-l-lg py-1 pl-3 placeholder-dark-green/25 text-dark-green font-medium focus:ring-0 font-helvetica" placeholder={type}
-            />
-            <div className='bg-brown/25 rounded-r-lg flex justify-center items-center pr-3 py-1'>
-                <Icons name={icon}/>
-            </div>
+                <input type={type} value={value} onChange={handleChange}
+                    className="bg-brown/25 rounded-l-lg py-1 pl-3 placeholder-dark-green/25 text-dark-green font-medium focus:ring-0 font-helvetica" placeholder={type}
+                />
+                <div className='bg-brown/25 rounded-r-lg flex justify-center items-center pr-3 py-1'>
+                    <Icons name={icon} />
+                </div>
             </div>
         </div>
     );
