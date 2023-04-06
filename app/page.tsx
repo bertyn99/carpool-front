@@ -33,11 +33,7 @@ export default function Home() {
   return (
     <>
       <div className='w-full h-screen flex flex-col justify-center items-center'>
-<<<<<<< HEAD
         <Homecardlist cardInfoList={cardInfoList} title="Everything to know about CarPool"/>  
-=======
-        <Homecardlist cardInfoList={cardInfoList} title="Everything to know about CarPool" />
->>>>>>> 2163e971b485fa885a0c98ed62d4d717548f55fa
       </div>
     </>
   )
