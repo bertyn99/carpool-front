@@ -1,7 +1,7 @@
 import React from 'react';
 
 import TripsCardList from '@/components/tripscardlist/Tripscardlist';
-import Input from '@/components/inputs/Input';
+import SearchBar from '@/components/searchbar/searchbar';
 
 const Search = () => {
     
@@ -38,7 +38,15 @@ const Search = () => {
       return (
         <>
           <div className='flex flex-col justify-center items-center'>
-            <TripsCardList cardInfoList={cardInfoList}/>  
+            <div className='mt-10 w-full flex flex-col justify-center items-center'>
+                <SearchBar />
+            </div>
+            <div className='mt-10 w-full flex flex-col justify-center items-center'>
+
+            </div>
+            <div className=' mt-8 w-full flex flex-col justify-center items-center'>
+                <TripsCardList cardInfoList={cardInfoList}/>  
+            </div>
           </div>
         </>
       ) 
