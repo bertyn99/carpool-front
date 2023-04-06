@@ -41,8 +41,9 @@ export default function Home() {
   return (
     <>
       <div className='w-full h-screen flex flex-col justify-center items-center'>
+        <Homecardlist cardInfoList={cardInfoList} title="Everything to know about CarPool"/>
         <Input label="Email" type="email" icon="Email" />
-        <Input label="Password" type="password" icon="Password" />
+        <Input label="Password" type="password" icon="Password" />        
       </div>
     </>
   ) 
