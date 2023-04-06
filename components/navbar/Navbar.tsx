@@ -1,6 +1,5 @@
 
 import Link from 'next/link';
-import Image from 'next/image'
 const Navbar = () => {
   return (
     <nav className="font-montserrat bg-light-green border-gray-200 px-2 sm:px-4 py-2.5 ">
@@ -17,6 +16,8 @@ const Navbar = () => {
           <ul className="flex flex-col p-4  rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium ">
             <Link className="block py-2 pl-3 pr-4 text-base" href="/" >Home</Link>
             <Link className="block py-2 pl-3 pr-4 text-base" href="/about">About</Link>
+            <Link className="block py-2 pl-3 pr-4 text-base" href="/search">Search</Link>
+            <Link className="block py-2 pl-3 pr-4 text-base" href="/profile">Profile</Link>
             <Link className="block py-2 pl-3 pr-4 text-base" href="/signin">SignIn</Link>
             <Link className="block py-2 pl-3 pr-4 text-base" href="/signup">SignUp</Link>
           </ul>

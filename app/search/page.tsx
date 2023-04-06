@@ -4,8 +4,6 @@ import TripsCardList from '@/components/tripscardlist/Tripscardlist';
 import SearchBar from '@/components/searchbar/searchbar';
 
 const Search = () => {
-    
-    
     const cardInfoList = [
         {
             url: "https://picsum.photos/200/300",

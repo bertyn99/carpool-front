@@ -44,6 +44,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+
     <html lang="en" className={`${MontserratAlt1.variable} font-sans  font-sans`}>
       <head />
       <body className='text-dark-green bg-cream'>

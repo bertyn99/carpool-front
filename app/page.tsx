@@ -1,5 +1,6 @@
-import './page.module.css'
+'use client';
 
+import './page.module.css'
 import React from "react";
 import { Homecardlist } from '@/components/homecardlist/Homecardlist';
 
@@ -31,10 +32,8 @@ export default function Home() {
     },
   ];
   return (
-    <>
       <div className='w-full h-screen flex flex-col justify-center items-center'>
         <Homecardlist cardInfoList={cardInfoList} title="Everything to know about CarPool"/>  
       </div>
-    </>
   )
 }
