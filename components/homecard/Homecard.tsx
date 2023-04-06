@@ -7,14 +7,22 @@ interface Props {
     cardInfo: cardInfoType;
 }
 
-const HomeCard = ({cardInfo}:Props) => {
+const HomeCard = ({ cardInfo }: Props) => {
     return (
         <div className="card max-w-sm p-6 justify-center">
+<<<<<<< HEAD
             <img src={cardInfo.url} alt={cardInfo.urlalt} className="m-auto"/>           
             <h5  className="mb-2 text-2xl font-bold tracking-tight text-dark-green">{cardInfo.title}</h5>
             <p className="mb-3 font-normal text-dark-green">{cardInfo.text1}</p>
             <p className="mb-3 font-normal text-dark-green">{cardInfo.text2}</p>
             <p className="mb-3 font-normal text-dark-green">{cardInfo.text3}</p>        
+=======
+            <img src={cardInfo.url} alt={cardInfo.urlalt} className="m-auto" />
+            <h5 className="mb-2 text-2xl font-bold tracking-tight text-dark-green">{cardInfo.title}</h5>
+            <p className="mb-3 font-normal text-dark-green">{cardInfo.text1}</p>
+            <p className="mb-3 font-normal text-dark-green">{cardInfo.text2}</p>
+            <p className="mb-3 font-normal text-dark-green">{cardInfo.text3}</p>
+>>>>>>> 2163e971b485fa885a0c98ed62d4d717548f55fa
         </div>
     );
 };
