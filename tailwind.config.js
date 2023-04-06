@@ -7,22 +7,22 @@ module.exports = {
         "./src/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
-        colors: {
-            "dark-green": "#003127",
-            "light-green": "#00B894",
-            "pastel-green": "#859382",            
-            "white": "#FFFFFF",
-            brown: "#A17C6B",
-            cream: "#FEF5EF",
-        },
-        fontFamily: {
-            sans: ["Helvetica", "Arial", "sans-serif"],
-        },
-        extend: {
-            fontFamily: {
-                montserrat: ["var(--font-MontserratAlt1)"],
-                helvetica: ["var(--font-Helvetica)"],
+    
+        extend: { 
+            colors: {
+                "dark-green": "#003127",
+                "light-green": "#00B894",
+                "pastel-green": "#859382",            
+                brown: "#A17C6B",
+                cream: "#FEF5EF",
             },
+            fontFamily: {
+                sans: ["Helvetica", "Arial", "sans-serif"],
+            },
+                fontFamily: {
+                    montserrat: ["var(--font-MontserratAlt1)"],
+                    helvetica: ["var(--font-Helvetica)"],
+                },
         },
     },
     plugins: [],
