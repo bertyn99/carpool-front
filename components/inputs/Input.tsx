@@ -12,15 +12,15 @@ const Input = forwardRef<Ref, props>(({ label, type, icon, value, onChange }, re
     const Icons = ({ name }: { name: string }) => {
         if (name === "") {
             return (
-                <FaRegEnvelope fillOpacity="0%" />
+                <FaRegEnvelope fillOpacity="0%" size={20} />
             );
         } else if (name == "Email") {
             return (
-                <FaRegEnvelope fill="text-dark-green" />
+                <FaRegEnvelope fill="text-dark-green" size={20} />
             );
         } else if (name == "Password") {
             return (
-                <FaEye fill="text-dark-green" />
+                <FaEye fill="text-dark-green" size={20} />
             );
         }
         return null
@@ -33,10 +33,10 @@ const Input = forwardRef<Ref, props>(({ label, type, icon, value, onChange }, re
 
     return (
         <div className='flex flex-col mb-8'>
-            <label className='font-montserrat text-dark-green mb-4'>{label}</label>
+            <label className='font-montserrat text-xl text-dark-green mb-4'>{label}</label>
             <div className='flex flex-row'>
                 <input type={type} value={value} onChange={onChange} ref={ref}
-                    className="bg-brown/25 rounded-l-lg py-1 pl-3 placeholder-dark-green/25 text-dark-green font-medium focus:ring-0 font-helvetica"
+                    className="bg-brown/25 rounded-l-lg py-2 px-5 placeholder-dark-green/25 text-dark-green font-medium focus:ring-0 font-helvetica text-xl"
                     placeholder={type}
                     pattern={type === "email" ? patternArray[0].email : patternArray[0].text}
                     required

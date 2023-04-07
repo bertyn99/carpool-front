@@ -1,4 +1,5 @@
 import Navbar from '@/components/navbar/Navbar'
+import Footer from '@/components/footer/Footer'
 import './globals.css'
 import localFont from '@next/font/local'
 
@@ -50,6 +51,7 @@ export default function RootLayout({
       <body className='text-dark-green bg-cream'>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   )
