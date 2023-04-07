@@ -1,6 +1,8 @@
 import Modifyprofile from '@/components/modifyProfile/Modifyprofile';
 import React from 'react';
 
+import Button from '../../components/buttons/Button'
+
 const Profile = () => {
     const onClickModify = () => {
         console.log("modify");
@@ -40,9 +42,7 @@ const Profile = () => {
                     </div>
                 <div className="py-10 border-t border-blueGray-200 text-center">
                     <div className="flex flex-wrap justify-center">
-                        <Button className="bg-dark-green text-white">
-                        Modify Profile
-                        </Button>
+                    <Button label="Se connecter" type="submit" style="classic" />
                     </div>
                 </div>
                 </div>
