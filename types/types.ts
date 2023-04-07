@@ -15,4 +15,6 @@ export type CardTripType = {
     NameLast: string; 
     StartDate: string;
     EndDate: string;
+    StartAddress: string;
+    EndAddress: string;
 };

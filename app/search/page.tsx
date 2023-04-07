@@ -12,7 +12,9 @@ const Search = () => {
             NameLast: "Valentin",
             StartDate: "11h00",
             EndDate: "15h30",
-            Price: "25"
+            Price: "25",
+            StartAddress: "Cholet",
+            EndAddress: "Nantes"
         },
         {
             url: "https://picsum.photos/200/300",
@@ -21,7 +23,9 @@ const Search = () => {
             NameLast: "Lucas",
             StartDate: "11h00",
             EndDate: "15h30",
-            Price: "25"
+            Price: "25",
+            StartAddress: "Cholet",
+            EndAddress: "Nantes"
         },
         {
             url: "https://picsum.photos/200/300",
@@ -30,19 +34,21 @@ const Search = () => {
             NameLast: "Douglas",
             StartDate: "11h00",
             EndDate: "15h30",
-            Price: "25"
+            Price: "25",
+            StartAddress: "Cholet",
+            EndAddress: "Nantes"
         },
       ];
       return (
         <>
           <div className='flex flex-col justify-center items-center'>
-            <div className='mt-10 w-full flex flex-col justify-center items-center'>
+            <div className=' mt-28 w-full flex flex-col justify-center items-center'>
                 <SearchBar />
             </div>
-            <div className='mt-10 w-full flex flex-col justify-center items-center'>
+            <div className='mt-8 w-full flex flex-col justify-center items-center'>
 
             </div>
-            <div className=' mt-8 w-full flex flex-col justify-center items-center'>
+            <div className='w-full flex flex-col justify-center items-center'>
                 <TripsCardList cardInfoList={cardInfoList}/>  
             </div>
           </div>
