@@ -1,6 +1,10 @@
-import React, { FC, InputHTMLAttributes } from 'react';
+import React, { FC, InputHTMLAttributes, MouseEventHandler } from 'react';
 
-interface props extends InputHTMLAttributes<HTMLInputElement> { label: string; type?: 'submit' | 'reset' | 'button' | undefined; style: 'outlined' | 'classic' | undefined; onClick?: () => void; }
+interface props extends InputHTMLAttributes<HTMLInputElement> { 
+    label: string; type?: 'submit' | 'reset' | 'button' | undefined; 
+    style: 'outlined' | 'classic' | undefined; 
+    onClick?: () => void; 
+}
 
 const Button: React.FC<props> = ({ label, type, style, onClick }) => {
 

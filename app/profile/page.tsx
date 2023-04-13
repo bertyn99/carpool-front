@@ -4,13 +4,7 @@ import Modifyprofile from '@/components/modifyProfile/Modifyprofile';
 import React, { useState } from 'react';
 
 const Profile = () => {
-    const [showModify, setShowModify] = useState(false);
-    console.log(showModify);
-    const onClickModify = () => {
-        console.log("modify profile");
-        setShowModify(true);
-    }
-    
+    const [showModify, setShowModify] = useState(false);    
     return (
         <div className="w-full  px-4 mx-auto">
             <div className="relative flex flex-col bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
@@ -45,9 +39,9 @@ const Profile = () => {
                         </div>
                     </div>
                 <div className="py-10 border-t border-blueGray-200 text-center">
-                     {showModify?<Modifyprofile/>:
+                     {showModify?<Modifyprofile />:
                      <div className="flex flex-wrap justify-center">
-                        <Button onClick={onClickModify} label="Modify Profile" type="submit" style="classic" />
+                        <Button onClick={()=>(setShowModify(true))} label="Modify Profile" type="submit" style="classic" />
                     </div>}
                 </div>
                 </div>

@@ -1,6 +1,7 @@
 import { useGetCurrentUser } from "@/lib/hook/useGetCurrentUser";
 import { redirect } from "next/navigation";
 import React from "react";
+import Input from "../inputs/Input";
 
 const Modifyprofile = async () => {
   const currentUser = await useGetCurrentUser();
@@ -18,7 +19,6 @@ const Modifyprofile = async () => {
               This information will be displayed publicly so be careful what you
               share.
             </p>
-
                     <div className="sm:col-span-4">
                         <div className="mt-2 flex justify-center">
                         <Input label="Username" type="username" name="username" id="username" className=" block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" required={undefined} />
@@ -126,8 +126,8 @@ const Modifyprofile = async () => {
                 </div>
                 </div>
                 <div className="mt-6 flex items-center justify-end gap-x-6">
-                <button type="button" className="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
-                <button type="submit" className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+                {/* <Button style="classic" onClick={} type="button" label="Cancel"/>
+                <Button style="classic" onClick={} type="submit" label="Save" /> */}
                 </div>
             </form>
         </div>
