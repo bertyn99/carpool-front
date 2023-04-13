@@ -8,6 +8,7 @@ export type cardInfoType = {
 };
 
 export type CardTripType = {
+    id: number;
     url: string; 
     urlalt: string;
     Price: string;

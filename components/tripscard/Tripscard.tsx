@@ -8,7 +8,7 @@ interface Props {
 
 const TripsCard = ({cardInfo}:Props) => {
     return (
-       <div className="flex flex-row justify-between w-4/6 rounded-xl my-6 bg-light-green py-6 px-5 drop-shadow-lg">
+       <div className="flex flex-row justify-between w-4/6 rounded-xl my-6 bg-light-green py-6 px-5 drop-shadow-lg" key={cardInfo.id}>
             <div className='flex flex-col w-1/6 items-center'>
                 <img src={cardInfo.url} alt={cardInfo.urlalt} className=" w-16 h-16 rounded-full"/>
             </div>

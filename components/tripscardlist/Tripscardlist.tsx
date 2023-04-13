@@ -1,6 +1,7 @@
 import { CardTripType } from '@/types/types';
 import React from 'react';
 import TripsCard from '../tripscard/Tripscard';
+import Link from 'next/link'
 
 interface Props {
     cardInfoList: CardTripType[];
@@ -13,7 +14,9 @@ export const TripsCardList = ({cardInfoList}:Props) => {
           {
             cardInfoList.map((cardInfo) => {
               return (
+                <Link href={`/tripsdetails/${cardInfo.id}`} className='w-full flex flex-col justify-center items-center' >
                   <TripsCard cardInfo={cardInfo}/>
+                </Link>
               )
             })
           }
