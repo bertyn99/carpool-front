@@ -18,3 +18,8 @@ export type CardTripType = {
     StartAddress: string;
     EndAddress: string;
 };
+
+export type cardInfo2Type = {
+    text: string;
+    icon: string;
+};
