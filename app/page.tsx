@@ -9,10 +9,6 @@ import Image from 'next/image'
 import Button from '../components/buttons/Button'
 import WaveTop from '../public/wave.svg'
 import WaveBottom from '../public/wave2.svg'
-import timer from '../public/timer.svg'
-import tree from '../public/tree.svg'
-import water from '../public/water.svg'
-import { Icon } from '@iconify/react';
 
 export default function Home() {
   const cardInfoList = [
@@ -48,16 +44,18 @@ export default function Home() {
   ];
   return (
     <>
-      <div className='my-10 w-full flex flex-row flex-nowrap'>
-        <div className='flex-1 w-full px-24 py-24'>
-          <div className='w-full h-full bg-center bg-no-repeat bg-contain' style={{ backgroundImage: 'url(https://rideamigos.com/wp-content/uploads/2019/01/Ride-Amigos-02-1030x723.png)' }}>
+      <div className='w-full'>
+        <div className='max-w-screen-xl flex flex-row xl:justify-around my-10 mx-auto'>
+          <div className='xl:flex flex-1  hidden w-full pr-24 py-24'>
+            <div className='w-full h-full bg-center bg-no-repeat bg-contain' style={{ backgroundImage: 'url(https://rideamigos.com/wp-content/uploads/2019/01/Ride-Amigos-02-1030x723.png)' }}>
 
+            </div>
           </div>
-        </div>
-        <div className='flex-1 pr-24 flex flex-col items-center'>
-          <Homecardlist cardInfoList={cardInfoList} />
-          <div className='mb-10'>
-            <Button label="Recherchez votre trajet" type="submit" style="classic" />
+          <div className='flex xl:flex-1 w-full flex flex-col items-center'>
+            <Homecardlist cardInfoList={cardInfoList} />
+            <div className='mb-10'>
+              <Button label="Recherchez votre trajet" type="submit" style="classic" />
+            </div>
           </div>
         </div>
       </div >
@@ -84,11 +82,11 @@ export default function Home() {
         />
       </div>
       <div className='w-full flex flex-col justify-center items-center mb-24' id='map'>
-        <h3 className='w-full text-center mb-20 font-montserrat text-2xl'>Avec notre application, voyagez <span className='font-bold'>step</span> by <span className='font-bold'>step</span> dans toute la France</h3>
+        <h3 className='w-full text-center mb-20 font-montserrat text-2xl mx-4 mt-8 md:mt-0'>Avec notre application, voyagez <span className='font-bold'>step</span> by <span className='font-bold'>step</span> dans toute la France</h3>
         <Image
           src={mapHome}
           alt="Picture of the author"
-          className='w-4/6 object-cover object-fit'
+          className='lg:max-w-4/6 max-w-5/6 object-cover object-fit'
         />
       </div>
     </>

@@ -6,7 +6,7 @@ const Footer = () => {
             <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
                 <div className="sm:flex sm:items-center sm:justify-between">
                     <a href='/'>
-                        <Image className='flex items-center m-auto' width="80" height="180" src="/logo.png" alt="" />
+                        <Image className='hidden items-center m-auto md:flex' width="80" height="180" src="/logo.png" alt="" />
                         <span className="font-montserrat text-xl tracking-tight">CAR</span>
                         <span className="font-montserrat text-white text-xl tracking-tight">POOL</span>
                     </a>

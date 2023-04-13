@@ -52,6 +52,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <script src="https://unpkg.com/flowbite@1.4.4/dist/flowbite.js"></script>
       </body>
     </html>
   )

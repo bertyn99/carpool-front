@@ -21,7 +21,7 @@ const EnvironmentCard = ({ cardInfo }: Props) => {
     }
 
     return (
-        <div className="card max-w-sm justify-center bg-brown/25 mx-4 p-6 rounded-lg">
+        <div className="card max-w-sm justify-center bg-brown/25 mx-4 p-6 rounded-lg mb-4">
             <div className="w-full flex justify-center items-center my-4">
                 <Image
                     src={cardInfo.icon == "tree" ? tree : null || cardInfo.icon == "water" ? water : null || cardInfo.icon == "timer" ? timer : null}
