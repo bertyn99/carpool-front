@@ -30,3 +30,22 @@ export type cardInfo2Type = {
     text: string;
     icon: string;
 };
+
+export type profileInfoType = {
+    url: string;
+    urlalt: string;
+    name: string;
+    email: string;
+    phone: string;
+    address: string;
+    city: string;
+    postalCode: string;
+    cars: carType[];
+};
+
+export type carType ={
+    model: string;
+    nbPlate: string;
+    color: string;
+    seats: number;
+}

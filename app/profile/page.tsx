@@ -1,49 +1,45 @@
 'use client' 
+import AddCar from '@/components/addCar/AddCar';
 import Button from '@/components/buttons/Button';
 import Modifyprofile from '@/components/modifyProfile/Modifyprofile';
+import ProfileCard from '@/components/profileCard/ProfileCard';
+import { profileInfoType } from '@/types/types';
 import React, { useState } from 'react';
 
 const Profile = () => {
     const [showModify, setShowModify] = useState(false);    
+    const [showAddCar, setShowAddCar] = useState(false);  
+
+    const profileInfo: profileInfoType = {
+        name: "Kuack Ube",
+        url: "https://picsum.photos/200/300",
+        email: "TuaMer@gmail.com",
+        phone: "06 06 06 06 06",
+        address: "1 rue de la paix",
+        city: "Paris",
+        postalCode: "75000",
+        urlalt: 'profile picture',
+        cars: [
+            {
+                model: "Fiat 126",
+                nbPlate: "AA-123-AA",
+                color: "Red",
+                seats: 4
+            },
+        ],
+    }
+        
     return (
-        <div className="w-full  px-4 mx-auto">
-            <div className="relative flex flex-col bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
-                <div className="px-6">
-                <div className="flex flex-wrap justify-center">
-                    <div className="w-full px-4 flex justify-center">
-                    <div className="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full ">
-                        <svg className="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path  d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path></svg>
-                    </div>
-                    </div>
-                
-                </div>
-                <div className="text-center">
-                    <h3 className="text-xl font-semibold leading-normal text-blueGray-700 ">
-                    Douglas Barlow
-                    </h3>
-                    <div className="font-bold">
-                    <i className=""></i>
-                    France - nantes
-                    </div>
-                </div>
-                <div className="w-full text-center flex justify-center ">
-                        <div className="text-center">
-                        <span className="text-sm text-blueGray-400">Trips</span>
-                        <span className="text-xl font-bold block uppercase ">
-                            2
-                        </span>     
-                        <span className="text-sm text-blueGray-400">Cars</span>
-                        <span className="text-xl font-bold block uppercase ">
-                            2
-                        </span>                         
-                        </div>
-                    </div>
+        <div className="container w-full px-4 mx-auto font-montserrat text-center">
+            <div className="relative flex flex-col w-full mb-6 shadow-xl rounded-lg mt-16">
+                <h1 className=" text-4xl font-semibold leading-7 text-dark-green mb-8">Votre Profile</h1>
+                <ProfileCard profileInfo={profileInfo}/>
                 <div className="py-10 border-t border-blueGray-200 text-center">
-                     {showModify?<Modifyprofile />:
-                     <div className="flex flex-wrap justify-center">
+                     {showModify?<Modifyprofile />: showAddCar? <AddCar/>:
+                     <div className="flex flex-wrap justify-center gap-x-6">
                         <Button onClick={()=>(setShowModify(true))} label="Modify Profile" type="submit" style="classic" />
+                        <Button onClick={()=>(setShowAddCar(true))} label="Ajouter une voiture" type="submit" style="classic" />
                     </div>}
-                </div>
                 </div>
             </div>
         </div>
