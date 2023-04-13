@@ -46,7 +46,7 @@ export default function RootLayout({
 }) {
   return (
 
-    <html lang="en" className={`${MontserratAlt1.variable} font-sans  font-sans`}>
+    <html lang="en" className={`${MontserratAlt1.variable} font-sans  font-sans scroll-smooth`}>
       <head />
       <body className='text-dark-green bg-cream'>
         <Navbar />
