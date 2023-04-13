@@ -1,6 +1,7 @@
 'use client';
 
-import React, { FC, InputHTMLAttributes, useEffect } from 'react';
+import React, { FC, InputHTMLAttributes, SetStateAction, useState, forwardRef, useEffect } from 'react';
+import { UseFormRegister } from 'react-hook-form';
 import { FaRegEnvelope, FaEye } from 'react-icons/fa';
 
 interface props extends InputHTMLAttributes<HTMLInputElement> {
@@ -10,10 +11,13 @@ interface props extends InputHTMLAttributes<HTMLInputElement> {
     required?: undefined | boolean;
     placeholder?: string;
     style?: string;
+    onChange?: (event: any) => void;
     value?: string;
 }
 
-const Input: React.FC<props> = ({ label, type, icon, placeholder, style, onChange, value }) => {
+export type Ref = HTMLInputElement;
+
+const Input = forwardRef<Ref, props>(({ label, type, icon, placeholder, style, onChange, value }, ref) => {
 
     const Icons = ({ name }: { name: string }) => {
         if (name === "") {
@@ -33,8 +37,8 @@ const Input: React.FC<props> = ({ label, type, icon, placeholder, style, onChang
     }
 
     let patternArray = [{
-        'text': '[a-z0-9]{1, 15}',
-        'email': '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$',
+        'text': '[a-z0-9]{1,15}',
+        'email': '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$',
     }]
 
     useEffect(() => {
@@ -45,7 +49,7 @@ const Input: React.FC<props> = ({ label, type, icon, placeholder, style, onChang
         <div className='flex flex-col mb-8'>
             <label className='font-montserrat text-xl text-dark-green mb-4'>{label}</label>
             <div className='flex flex-row'>
-                <input type={type} value={value}
+                <input type={type} value={value} ref={ref}
                     className={style != undefined ? style + " bg-brown/25 rounded-l-lg py-2 px-5 placeholder-dark-green/25 text-dark-green font-medium focus:ring-0 font-helvetica text-xl"
                         : "bg-brown/25 rounded-l-lg py-2 px-5 placeholder-dark-green/25 text-dark-green font-medium focus:ring-0 font-helvetica text-xl"}
                     placeholder={placeholder || type}
@@ -58,6 +62,6 @@ const Input: React.FC<props> = ({ label, type, icon, placeholder, style, onChang
             </div>
         </div>
     );
-}
+})
 
 export default Input;
