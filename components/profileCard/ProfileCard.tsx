@@ -6,7 +6,6 @@ interface props{
 
 
 const ProfileCard: React.FC<props> = (profileInfo) => {
-    console.log(profileInfo);
     return (
         <div className="px-6">                
             <div className="text-center">
@@ -30,6 +29,10 @@ const ProfileCard: React.FC<props> = (profileInfo) => {
                     <p>{profileInfo.profileInfo.address}</p>
                     <p>{profileInfo.profileInfo.postalCode}</p>  
                     <p>{profileInfo.profileInfo.city}</p>                  
+                </div>
+                <span className="text-dark-green text-lg font-bold">Numéro de téléphone:</span>
+                <div className="text-base block uppercase mb-8">
+                    <p>{profileInfo.profileInfo.phone}</p>            
                 </div>
             </div>
             <div className="w-full text-center flex justify-center ">
