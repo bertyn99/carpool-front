@@ -9,7 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^13.3.0",
+    "@iconify/react": "^4.1.0",
+    "@next/font": "^13.1.6",
     "@types/node": "18.13.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
@@ -17,13 +18,21 @@
     "eslint-config-next": "13.1.6",
     "next": "13.2.3",
     "next-auth": "^4.22.0",
+    "html-react-parser": "^3.0.15",
+    "immer": "^9.0.21",
+    "leaflet": "^1.9.3",
+    "leaflet-defaulticon-compatibility": "^0.1.1",
+    "leaflet-geosearch": "^3.7.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.5",
     "react-icons": "^4.8.0",
+    "react-leaflet": "^4.2.1",
     "typescript": "4.9.5"
   },
   "devDependencies": {
+    "@svgr/cli": "^7.0.0",
+    "@types/react-leaflet": "^3.0.0",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.7"

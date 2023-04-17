@@ -25,3 +25,8 @@ export type TripDetails = {
   passenger: any[];
   driver: { name: string; avatar: string };
 };
+
+export type cardInfo2Type = {
+    text: string;
+    icon: string;
+};
