@@ -4,6 +4,8 @@ import Input from "../../components/inputs/Input";
 import Button from "../../components/buttons/Button";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
+import {signIn, useSession} from "next-auth/react";
+import { useGetCurrentUser } from "@/lib/hook/useGetCurrentUser";
 const SignIn = () => {
   const {
     register,
@@ -12,7 +14,15 @@ const SignIn = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async(data) => {
+    const result = await signIn("credentials", {
+      email: data?.email,
+      password:data?.password,
+      redirect: true,
+      callbackUrl: "/", 
+    });
+    console.log(result)
+  };
 
   return (
     <>

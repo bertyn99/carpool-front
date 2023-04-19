@@ -27,6 +27,21 @@ export type TripDetails = {
 };
 
 export type cardInfo2Type = {
-    text: string;
-    icon: string;
+  text: string;
+  icon: string;
+};
+
+export type IUser = {
+  id: number;
+  name: string;
+  email: string;
+  avatar: string;
+  tel: string;
+  tokens: ITokens;
+};
+
+export type ITokens = {
+  accessToken: string;
+  refreshToken: string;
+  expireAt?: number;
 };

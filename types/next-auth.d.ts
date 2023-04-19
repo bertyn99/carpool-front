@@ -1,4 +1,5 @@
 import NextAuth, { DefaultSession } from "next-auth";
+import { IUser, ITokens } from "./types";
 
 declare module "next-auth" {
   /**
@@ -7,7 +8,18 @@ declare module "next-auth" {
   interface Session {
     user: {
       /** The user's postal address. */
-      address: string;
+      token?: accessToken;
+      avatar: string;
     } & DefaultSession["user"];
+  }
+  interface User extends IUser {}
+}
+
+declare module "next-auth/jwt" {
+  interface JWT {
+    accessToken: string;
+    refreshToken: string;
+    expiresAt: number;
+    error?: "RefreshAccessTokenError";
   }
 }

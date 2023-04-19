@@ -6,7 +6,7 @@ const Navbar = () => {
   /*    */
   const Connected = async () => {
     const currentUser = await useGetCurrentUser();
-
+    console.log(currentUser);
     if (currentUser) {
       return (
         <Link
