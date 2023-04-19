@@ -40,37 +40,37 @@ const Modifyprofile : React.FC<props> = ({ profileInfo, handleSubmit, handleChan
                         <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 md:grid-cols-6">
                             <div className="md:col-span-2 ">
                                 <div className="mt-2 flex justify-center">
-                                <Input onChange={handleChange} value={profileInfo.name} label="Prenom" type="Prenom" name="name" id="name"  required={undefined} />
+                                <Input onChange={handleChange} value={profileInfo.name} label="Prenom" placeholder="Prenom" name="name" id="name"  required={undefined} />
                                 </div>
                             </div>
 
                             <div className="md:col-span-2" >
                                 <div className="mt-2 flex justify-center">
-                                <Input onChange={handleChange} value={profileInfo.email} label="Email" id="email" name="email" type="email" required={undefined} />
+                                <Input onChange={handleChange} value={profileInfo.email} label="Email" id="email" name="email" placeholder="email" required={undefined} />
                                 </div>
                             </div>
 
                             <div className="md:col-span-2">
                                 <div className="mt-2 flex justify-center">
-                                <Input onChange={handleChange} value={profileInfo.phone} label="Numéro" type="Numéro de téléphone" name="phone" id="phone" required={undefined} />
+                                <Input onChange={handleChange} value={profileInfo.phone} label="Numéro" placeholder="Numéro de téléphone" name="phone" id="phone" required={undefined} />
                                 </div>
                             </div>
 
                             <div className="md:col-span-2">
                                 <div className="mt-2 flex justify-center">
-                                <Input onChange={handleChange} value={profileInfo.address} label="Rue" type="Rue" name="address" id="address" required={undefined} />
+                                <Input onChange={handleChange} value={profileInfo.address} label="Rue" placeholder="Rue" name="address" id="address" required={undefined} />
                                 </div>
                             </div>
 
                             <div className="md:col-span-2">
                                 <div className="mt-2 flex justify-center">
-                                <Input onChange={handleChange} value={profileInfo.city} label='Ville' type="Ville" name="city" id="city" required={undefined} />
+                                <Input onChange={handleChange} value={profileInfo.city} label='Ville' placeholder="Ville" name="city" id="city" required={undefined} />
                                 </div>
                             </div>
 
                             <div className="md:col-span-2">
                                 <div className="mt-2 flex justify-center">
-                                <Input onChange={handleChange} value={profileInfo.postalCode} label="Code Postal" type="Code Postal" name="postalCode" id="postalCode" required={undefined} />
+                                <Input onChange={handleChange} value={profileInfo.postalCode} label="Code Postal" placeholder="Code Postal" name="postalCode" id="postalCode" required={undefined} />
                                 </div>
                             </div>
                         </div>

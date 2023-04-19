@@ -37,10 +37,6 @@ const Profile: React.FC = () => {
         postalCode: "",
     })    
 
-    useEffect(() => {
-        console.log(profileInfo);
-    }, [profileInfo])
-
     const handleChange = (e: { target: { value: any; name: any; }; }) => {
         const value = e.target.value;
         setProfileInfo({
@@ -51,6 +47,7 @@ const Profile: React.FC = () => {
     
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+        //Instead of alert, we need to call the API to update the profile
         alert(JSON.stringify(profileInfo));
     }; 
 
