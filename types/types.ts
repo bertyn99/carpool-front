@@ -31,9 +31,8 @@ export type cardInfo2Type = {
     icon: string;
 };
 
-export type profileInfoType = {
+export type profileInfoAndCarType = {
     url: string;
-    urlalt: string;
     name: string;
     email: string;
     phone: string;
@@ -41,6 +40,16 @@ export type profileInfoType = {
     city: string;
     postalCode: string;
     cars: carType[];
+};
+
+export type profileInfoType = {
+    url: string;
+    name: string;
+    email: string;
+    phone: string;
+    address: string;
+    city: string;
+    postalCode: string;
 };
 
 export type carType ={

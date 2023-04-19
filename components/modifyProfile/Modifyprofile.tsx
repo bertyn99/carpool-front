@@ -1,33 +1,18 @@
-import React, { MouseEventHandler, useState } from 'react';
+import React from 'react';
+import { profileInfoType } from '@/types/types';
 import Button from '../buttons/Button';
 import Input from '../inputs/Input';
 
 interface props {
+    profileInfo: profileInfoType;
     handleSubmit: (e: React.FormEvent) => void;
+    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    setShowModify: React.Dispatch<React.SetStateAction<boolean>>;
 }
-
-const Modifyprofile : React.FC<props> = ( handleSubmit ) => {
-    const [profileInfo, setProfileInfo] = useState({
-        url: "",
-        name: "",
-        email: "",
-        phone: "",
-        address: "",
-        city: "",
-        postalCode: "",
-      })
-
-    const handleChange = (e: { target: { value: any; name: any; }; }) => {
-        const value = e.target.value;
-        setProfileInfo({
-            ...profileInfo,
-            [e.target.name]: value
-        });
-    }
-
+const Modifyprofile : React.FC<props> = ({ profileInfo, handleSubmit, handleChange, setShowModify}:props) => {
     return (
         <div>
-            <form onSubmit={()=> handleSubmit(profileInfo)}>
+            <form onSubmit={(e)=> handleSubmit(e)}>
                 <div className="space-y-12">
                     <div className="border-b border-gray-900/10 pb-12 font-montserrat">
                         <h2 className="text-xl font-semibold leading-7 text-dark-green">Modifier votre profile</h2>
@@ -92,7 +77,7 @@ const Modifyprofile : React.FC<props> = ( handleSubmit ) => {
                     </div>
                 </div>
                 <div className="mt-6 flex items-center gap-x-6 justify-center">
-                    <Button style="classic" type="button" label="Annuler"/>
+                    <Button onClick={()=>setShowModify(false)} style="classic" type="button" label="Annuler"/>
                     <Button style="classic" type='submit' label="Enregistrer" />
                 </div>
             </form>
