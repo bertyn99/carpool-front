@@ -7,6 +7,19 @@ export type cardInfoType = {
   text3: string;
 };
 
+export type CardTripType = {
+    id: number;
+    url: string; 
+    urlalt: string;
+    Price: string;
+    NameFirst: string;
+    NameLast: string; 
+    StartDate: string;
+    EndDate: string;
+    StartAddress: string;
+    EndAddress: string;
+};
+
 export type TripList = Trip[];
 export type Trip = {
   id: number;
@@ -16,6 +29,7 @@ export type Trip = {
   driver: { name: string; avatar: string };
   passenger: any[];
 };
+
 export type TripDetails = {
   id: number;
   price: number;
