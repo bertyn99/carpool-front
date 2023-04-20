@@ -7,33 +7,34 @@ const Navbar = () => {
   const Connected = async () => {
     const currentUser = await useGetCurrentUser();
 
-    if (currentUser) {
-      return (
+    return (
+      <>
         <Link
           className="block py-2 pl-3 pr-4 text-xl mx-4 hover:text-cream"
           href="/profile"
         >
           Profile
         </Link>
-      );
-    } else {
-      return (
-        <>
-          <Link
-            className="block py-2 pl-3 pr-4 text-xl mx-4 hover:text-cream"
-            href="/signin"
-          >
-            SignIn
-          </Link>
-          <Link
-            className="block py-2 pl-3 pr-4 text-xl mx-4 hover:text-cream"
-            href="/signup"
-          >
-            SignUp
-          </Link>
-        </>
-      );
-    }
+        <Link
+          className="block py-2 pl-3 pr-4 text-xl mx-4 hover:text-cream"
+          href="/createtrip"
+        >
+          Créer un trajet
+        </Link>
+        <Link
+          className="block py-2 pl-3 pr-4 text-xl mx-4 hover:text-cream"
+          href="/signin"
+        >
+          SignIn
+        </Link>
+        <Link
+          className="block py-2 pl-3 pr-4 text-xl mx-4 hover:text-cream"
+          href="/signup"
+        >
+          SignUp
+        </Link>
+      </>
+    );
   };
   return (
     <nav className="font-montserrat bg-light-green border-gray-200 px-2 sm:px-4 py-2.5 ">
