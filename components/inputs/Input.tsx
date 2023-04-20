@@ -14,21 +14,27 @@ import { FaRegEnvelope, FaEye } from "react-icons/fa";
 
 interface props extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
-  register: UseFormRegister<FieldValues>;
+  register?: UseFormRegister<FieldValues>;
   required?: undefined | boolean;
   placeholder?: string;
   style?: string;
-  errors: any;
+  errors?: any;
+  label?: string;
+  value?: string;
+  onChange?: (event: any) => void;
 }
 
 export type Ref = HTMLInputElement;
 
 const Input: FC<props> = ({
   name,
+  label,
   register,
   errors,
   placeholder,
   style,
+  onChange,
+  value,
   ...rest
 }) => {
   const Icons = ({ name }: { name: string }) => {
@@ -56,9 +62,10 @@ const Input: FC<props> = ({
   return (
     <div className="flex flex-col mb-8">
       <label className="font-montserrat text-xl text-dark-green mb-4 capitalize">
-        {name}
+        {label?label:name}
       </label>
       <div className="flex flex-row">
+      {register?
         <input
           {...register(name, {
             pattern: {
@@ -79,16 +86,26 @@ const Input: FC<props> = ({
           /* pattern={
             name === "email" ? patternArray[0].email : patternArray[0].text
           } */
-        />
+        />:
+          <input value={value}
+              className={style != undefined ? style + " bg-brown/25 rounded-l-lg py-2 px-5 placeholder-dark-green/25 text-dark-green font-medium focus:ring-0 font-helvetica text-xl"
+                  : "bg-brown/25 rounded-l-lg py-2 px-5 placeholder-dark-green/25 text-dark-green font-medium focus:ring-0 font-helvetica text-xl"}
+              placeholder={placeholder || name}
+              type="text"
+              onChange={onChange}
+              name={name}
+          />
+        }
         <div className="bg-brown/25 rounded-r-lg flex justify-center items-center pr-3 py-1 pl-3">
           <Icons name={name} />
         </div>
       </div>
-      {errors[name] && (
+      {errors?
+        errors[name] && (
         <p className="text-red-500 text-sm font-helvetica font-medium mt-2">
           {errors[name].message}
         </p>
-      )}
+      ):null}
     </div>
   );
 };
