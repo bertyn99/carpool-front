@@ -13,7 +13,8 @@ import { UseFormRegister, FieldValues } from "react-hook-form";
 import { FaRegEnvelope, FaEye } from "react-icons/fa";
 
 interface props extends InputHTMLAttributes<HTMLInputElement> {
-  name: string;
+  name?: string;
+  type?: string;
   register?: UseFormRegister<FieldValues>;
   required?: undefined | boolean;
   placeholder?: string;
@@ -28,6 +29,7 @@ export type Ref = HTMLInputElement;
 
 const Input: FC<props> = ({
   name,
+  type,
   label,
   register,
   errors,
@@ -62,50 +64,50 @@ const Input: FC<props> = ({
   return (
     <div className="flex flex-col mb-8">
       <label className="font-montserrat text-xl text-dark-green mb-4 capitalize">
-        {label?label:name}
+        {label ? label : name}
       </label>
       <div className="flex flex-row">
-      {register?
-        <input
-          {...register(name, {
-            pattern: {
-              value:
-                name === "email" ? patternArray[0].email : patternArray[0].text,
-              message: `${name} invalide`,
-            },
-          })}
-          className={
-            style != undefined
-              ? style +
+        {register ?
+          <input
+            {...register(name, {
+              pattern: {
+                value:
+                  name === "email" ? patternArray[0].email : patternArray[0].text,
+                message: `${name} invalide`,
+              },
+            })}
+            className={
+              style != undefined
+                ? style +
                 " bg-brown/25 rounded-l-lg py-2 px-5 placeholder-dark-green/25 text-dark-green font-medium focus:ring-0 font-helvetica text-xl"
-              : "bg-brown/25 rounded-l-lg py-2 px-5 placeholder-dark-green/25 text-dark-green font-medium focus:ring-0 font-helvetica text-xl"
-          }
-          aria-invalid={errors[name] ? "true" : "false"}
-          placeholder={placeholder || name}
-          {...rest}
+                : "bg-brown/25 rounded-l-lg py-2 px-5 placeholder-dark-green/25 text-dark-green font-medium focus:ring-0 font-helvetica text-xl"
+            }
+            aria-invalid={errors[name] ? "true" : "false"}
+            placeholder={placeholder || name}
+            {...rest}
           /* pattern={
             name === "email" ? patternArray[0].email : patternArray[0].text
           } */
-        />:
+          /> :
           <input value={value}
-              className={style != undefined ? style + " bg-brown/25 rounded-l-lg py-2 px-5 placeholder-dark-green/25 text-dark-green font-medium focus:ring-0 font-helvetica text-xl"
-                  : "bg-brown/25 rounded-l-lg py-2 px-5 placeholder-dark-green/25 text-dark-green font-medium focus:ring-0 font-helvetica text-xl"}
-              placeholder={placeholder || name}
-              type="text"
-              onChange={onChange}
-              name={name}
+            className={style != undefined ? style + " border-0 bg-brown/25 rounded-l-lg py-2 px-5 placeholder-dark-green/25 text-dark-green font-medium focus:ring-0 font-helvetica text-xl"
+              : "border-0 bg-brown/25 rounded-l-lg py-2 px-5 placeholder-dark-green/25 text-dark-green font-medium focus:ring-0 font-helvetica text-xl"}
+            placeholder={placeholder || name}
+            type={type || "text"}
+            onChange={onChange}
+            name={name}
           />
         }
         <div className="bg-brown/25 rounded-r-lg flex justify-center items-center pr-3 py-1 pl-3">
           <Icons name={name} />
         </div>
       </div>
-      {errors?
+      {errors ?
         errors[name] && (
-        <p className="text-red-500 text-sm font-helvetica font-medium mt-2">
-          {errors[name].message}
-        </p>
-      ):null}
+          <p className="text-red-500 text-sm font-helvetica font-medium mt-2">
+            {errors[name].message}
+          </p>
+        ) : null}
     </div>
   );
 };

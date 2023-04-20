@@ -24,13 +24,13 @@ const SignIn = () => {
               className="flex flex-col justify-center items-center"
             >
               <Input
-                name="email"
+                name="Email"
                 required
                 register={register}
                 errors={errors}
               />
               <Input
-                name="password"
+                name="Mot de passe"
                 register={register}
                 errors={errors}
                 required

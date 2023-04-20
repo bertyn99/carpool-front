@@ -25,15 +25,15 @@ const SignUp = () => {
               className="flex flex-col justify-center items-center"
             >
               <Input
-                name="email"
+                name="Email"
                 required
                 register={register}
                 errors={errors}
               />
-              <Input name="name" required register={register} errors={errors} />
-              <Input name="tel" required register={register} errors={errors} />
+              <Input name="Nom" required register={register} errors={errors} />
+              <Input name="Tel" required register={register} errors={errors} />
               <Input
-                name="password"
+                name="Mot de passe"
                 required
                 register={register}
                 errors={errors}

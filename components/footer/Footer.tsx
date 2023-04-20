@@ -12,13 +12,10 @@ const Footer = () => {
                     </a>
                     <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-cream sm:mb-0 text-lg">
                         <li>
-                            <a href="#" className="mr-4 hover:underline md:mr-6 ">About</a>
+                            <a href="#" className="mr-4 hover:underline md:mr-6 ">A propos</a>
                         </li>
                         <li>
-                            <a href="#" className="mr-4 hover:underline md:mr-6">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="#" className="mr-4 hover:underline md:mr-6 ">Licensing</a>
+                            <a href="#" className="mr-4 hover:underline md:mr-6 ">Licence</a>
                         </li>
                         <li>
                             <a href="#" className="hover:underline">Contact</a>
@@ -26,7 +23,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <hr className="my-6 border-dark-green sm:mx-auto  lg:my-8" />
-                <span className="block text-sm text-xl text-cream sm:text-center">© 2023 <a href="/" className="hover:underline">Carpool™</a>. All Rights Reserved.</span>
+                <span className="block text-sm text-xl text-cream sm:text-center">© 2023 <a href="/" className="hover:underline">Carpool™</a>. Tous droits réservés.</span>
             </div>
         </footer>
     );

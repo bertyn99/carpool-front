@@ -13,7 +13,7 @@ const Navbar = () => {
           className="block py-2 pl-3 pr-4 text-xl mx-4 hover:text-cream"
           href="/profile"
         >
-          Profile
+          Profil
         </Link>
         <Link
           className="block py-2 pl-3 pr-4 text-xl mx-4 hover:text-cream"
@@ -25,13 +25,13 @@ const Navbar = () => {
           className="block py-2 pl-3 pr-4 text-xl mx-4 hover:text-cream"
           href="/signin"
         >
-          SignIn
+          Connexion
         </Link>
         <Link
           className="block py-2 pl-3 pr-4 text-xl mx-4 hover:text-cream"
           href="/signup"
         >
-          SignUp
+          Inscription
         </Link>
       </>
     );
@@ -48,13 +48,13 @@ const Navbar = () => {
             className="block py-2 pl-3 pr-4 text-xl mx-4 hover:text-cream"
             href="/"
           >
-            Home
+            Accueil
           </Link>
           <Link
             className="block py-2 pl-3 pr-4 text-xl mx-4 hover:text-cream"
             href="/search"
           >
-            Search
+            Rechercher
           </Link>
           <Suspense fallback={<div>Loading...</div>}>
             <Connected />
