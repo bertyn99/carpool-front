@@ -1,52 +1,69 @@
+'use client' 
+import AddCar from '@/components/addCar/AddCar';
+import Button from '@/components/buttons/Button';
 import Modifyprofile from '@/components/modifyProfile/Modifyprofile';
-import React from 'react';
-import Button from '../../components/buttons/Button'
+import ProfileCard from '@/components/profileCard/ProfileCard';
+import { profileInfoAndCarType, profileInfoType } from '@/types/types';
+import React, { useEffect, useState } from 'react';
 
-const Profile = () => {
-    const onClickModify = () => {
-        console.log("modify");
+const Profile: React.FC = () => {
+    const profileInfoMock: profileInfoAndCarType = {
+        name: "Kuack Ube",
+        url: "https://picsum.photos/200/300",
+        email: "TuaMer@gmail.com",
+        phone: "06 06 06 06 06",
+        address: "1 rue de la paix",
+        city: "Paris",
+        postalCode: "75000",
+        cars: [
+            {
+                model: "Fiat 126",
+                nbPlate: "AA-123-AA",
+                color: "Red",
+                seats: 4
+            },
+        ],
     }
-    return (
-        <div className="w-full lg:w-4/12 px-4 mx-auto">
-            <div className="relative flex flex-col bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
-                <div className="px-6">
-                    <div className="flex flex-wrap justify-center">
-                        <div className="w-full px-4 flex justify-center">
-                            <div className="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full ">
-                                <svg className="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path></svg>
-                            </div>
-                        </div>
 
-                    </div>
-                    <div className="text-center">
-                        <h3 className="text-xl font-semibold leading-normal text-blueGray-700 ">
-                            Douglas Barlow
-                        </h3>
-                        <div className="font-bold">
-                            <i className=""></i>
-                            France - nantes
-                        </div>
-                    </div>
-                    <div className="w-full text-center flex justify-center ">
-                        <div className="text-center">
-                            <span className="text-sm text-blueGray-400">Trips</span>
-                            <span className="text-xl font-bold block uppercase ">
-                                2
-                            </span>
-                            <span className="text-sm text-blueGray-400">Cars</span>
-                            <span className="text-xl font-bold block uppercase ">
-                                2
-                            </span>
-                        </div>
-                    </div>
-                    <div className="py-10 border-t border-blueGray-200 text-center">
-                        <div className="flex flex-wrap justify-center">
-                            <Button label="Se connecter" type="submit" style="classic" />
-                        </div>
-                    </div>
+    const [showModify, setShowModify] = useState(false);    
+    const [showAddCar, setShowAddCar] = useState(false);  
+    const [profileInfo, setProfileInfo] = useState<profileInfoType>({
+        url: "",
+        name: "",
+        email: "",
+        phone: "",
+        address: "",
+        city: "",
+        postalCode: "",
+    })    
+
+    const handleChange = (e: { target: { value: any; name: any; }; }) => {
+        const value = e.target.value;
+        setProfileInfo({
+            ...profileInfo,
+            [e.target.name]: value
+        });
+    }
+    
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        //Instead of alert, we need to call the API to update the profile
+        alert(JSON.stringify(profileInfo));
+    }; 
+
+    return (
+        <div className="container w-full px-4 mx-auto font-montserrat text-center">
+            <div className="relative flex flex-col w-full mb-6 shadow-xl rounded-lg mt-16">
+                <h1 className=" text-4xl font-semibold leading-7 text-dark-green mb-8">Votre Profile</h1>
+                <ProfileCard profileInfo={profileInfoMock}/>
+                <div className="py-10 border-t border-blueGray-200 text-center">
+                     {showModify?<Modifyprofile handleChange={handleChange} profileInfo={profileInfo} handleSubmit={handleSubmit} setShowModify={setShowModify}/>: showAddCar? <AddCar/>:
+                     <div className="flex flex-wrap justify-center gap-x-6">
+                        <Button onClick={()=>(setShowModify(true))} label="Modify Profile" type="submit" style="classic" />
+                        <Button onClick={()=>(setShowAddCar(true))} label="Ajouter une voiture" type="submit" style="classic" />
+                    </div>}
                 </div>
             </div>
-            <Modifyprofile />
         </div>
     );
 };
