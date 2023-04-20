@@ -4,7 +4,7 @@ import TripsCard from '../tripscard/Tripscard';
 import Link from 'next/link'
 
 interface Props {
-  cardInfoList: Trip[];
+    cardInfoList: CardTripType[];
 }
 
 export const TripsCardList = ({cardInfoList}:Props) => {

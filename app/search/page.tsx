@@ -1,10 +1,8 @@
 import React from 'react';
 import Link from 'next/link'
 
-import TripsCardList from "@/components/tripscardlist/Tripscardlist";
-import SearchBar from "@/components/searchbar/searchbar";
-import { Trip } from "@/types/types";
-import { getTrips } from "@/service/tripsService";
+import TripsCardList from '@/components/tripscardlist/Tripscardlist';
+import SearchBar from '@/components/searchbar/searchbar';
 
 const Search = () => {
     const cardInfoList = [
@@ -71,7 +69,7 @@ const Search = () => {
             </div>
           </div>
         </>
-      )
+      ) 
 };
 
 export default Search;
