@@ -269,3 +269,24 @@
     transform: rotate(0deg);
   }
 }
+
+@media (max-width: 1000px) {
+  .homecards{
+      display: inline;
+  }
+  .card{        
+      margin: auto;
+      margin-top: 20px;
+      margin-top: 20px;
+  }
+}
+@media (min-width: 1000px) {
+  .homecards{
+      display: flex;
+      
+      display: none;
+  }
+  .card{
+      margin: 20px;
+  }
+}
