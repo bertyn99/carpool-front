@@ -84,6 +84,7 @@ const Input: FC<props> = ({
             }
             aria-invalid={errors[name] ? "true" : "false"}
             placeholder={placeholder || name}
+            type={type}
             {...rest}
           /* pattern={
             name === "email" ? patternArray[0].email : patternArray[0].text

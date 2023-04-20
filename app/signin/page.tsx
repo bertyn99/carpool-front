@@ -4,6 +4,7 @@ import Input from "../../components/inputs/Input";
 import Button from "../../components/buttons/Button";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
 const SignIn = () => {
   const {
     register,
@@ -12,7 +13,12 @@ const SignIn = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const router = useRouter();
+
+  const onSubmit = (data) => {
+    console.log(data);
+    router.push("/profile");
+  };
 
   return (
     <>
@@ -32,6 +38,7 @@ const SignIn = () => {
               <Input
                 name="Mot de passe"
                 register={register}
+                type="password"
                 errors={errors}
                 required
               />

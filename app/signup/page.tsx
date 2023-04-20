@@ -5,6 +5,7 @@ import Input from "../../components/inputs/Input";
 import Button from "../../components/buttons/Button";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
 const SignUp = () => {
   const {
     register,
@@ -13,8 +14,13 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data: any) => console.log(data);
+  const router = useRouter();
 
+  const onSubmit = (data: any) => {
+    console.log(data);
+    router.push("/profile");
+  };
+  
   return (
     <>
       <div className="container mx-auto py-24">
@@ -34,6 +40,7 @@ const SignUp = () => {
               <Input name="Tel" required register={register} errors={errors} />
               <Input
                 name="Mot de passe"
+                type="password"
                 required
                 register={register}
                 errors={errors}

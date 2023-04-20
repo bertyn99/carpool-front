@@ -57,7 +57,7 @@ const Profile: React.FC = () => {
                 <h1 className=" text-4xl font-semibold leading-7 text-dark-green mb-8">Votre Profile</h1>
                 <ProfileCard profileInfo={profileInfoMock}/>
                 <div className="py-10 border-t border-blueGray-200 text-center">
-                     {showModify?<Modifyprofile handleChange={handleChange} profileInfo={profileInfo} handleSubmit={handleSubmit} setShowModify={setShowModify}/>: showAddCar? <AddCar/>:
+                     {showModify?<Modifyprofile handleChange={handleChange} profileInfo={profileInfo} handleSubmit={handleSubmit} setShowModify={setShowModify}/>: showAddCar? <AddCar setShowAddCar={setShowAddCar} />:
                      <div className="flex flex-wrap justify-center gap-x-6">
                         <Button onClick={()=>(setShowModify(true))} label="Modify Profile" type="submit" style="classic" />
                         <Button onClick={()=>(setShowAddCar(true))} label="Ajouter une voiture" type="submit" style="classic" />
