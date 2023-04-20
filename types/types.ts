@@ -19,28 +19,3 @@ export type CardTripType = {
     StartAddress: string;
     EndAddress: string;
 };
-
-export type TripList = Trip[];
-export type Trip = {
-  id: number;
-  price: number;
-  start_address: string;
-  end_address: string;
-  driver: { name: string; avatar: string };
-  passenger: any[];
-};
-
-export type TripDetails = {
-  id: number;
-  price: number;
-  startAddress: string;
-  endAddress: string;
-  date: Date;
-  passenger: any[];
-  driver: { name: string; avatar: string };
-};
-
-export type cardInfo2Type = {
-    text: string;
-    icon: string;
-};
