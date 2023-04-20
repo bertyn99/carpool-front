@@ -9,6 +9,9 @@ module.exports = {
     theme: {
     
         extend: { 
+            padding: {
+                pady: "72px"
+            },
             colors: {
                 "dark-green": "#003127",
                 "light-green": "#00B894",
