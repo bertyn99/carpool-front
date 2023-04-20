@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import type { CardTripType } from '../../types/types';
+import type { Trip } from "../../types/types";
+import Image from "next/image";
 
 interface Props {
-   cardInfo: CardTripType;
+  cardInfo: Trip;
 }
 
 const TripsCard = ({cardInfo}:Props) => {
