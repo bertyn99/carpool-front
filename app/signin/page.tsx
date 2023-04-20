@@ -6,22 +6,29 @@ import Image from "next/image";
 import { useForm } from "react-hook-form";
 import {signIn, useSession} from "next-auth/react";
 import { useGetCurrentUser } from "@/lib/hook/useGetCurrentUser";
+import { login } from "@/service/authService";
+import { useAppDispatch } from "@/lib/hook/redux";
+import { setCredentials } from "@/store/slice/userSlice";
+import { redirect, useRouter } from "next/navigation";
 const SignIn = () => {
+    const router = useRouter();
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
-
+  const dispatch= useAppDispatch();
   const onSubmit = async(data) => {
-    const result = await signIn("credentials", {
+  /*   const result = await signIn("credentials", {
       email: data?.email,
       password:data?.password,
       redirect: true,
       callbackUrl: "/", 
-    });
-    console.log(result)
+    }); */
+    const result = await login({email:data?.email,password:data?.password}) 
+    if(result)dispatch(setCredentials(result))
+    router.push('/');
   };
 
   return (

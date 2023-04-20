@@ -1,12 +1,19 @@
+"use client";
+import { useAppSelector } from "@/lib/hook/redux";
 import { useGetCurrentUser } from "@/lib/hook/useGetCurrentUser";
 
 import Link from "next/link";
-import { Suspense, use } from "react";
+import { Suspense, use, useEffect } from "react";
 const Navbar = () => {
   /*    */
-  const Connected = async () => {
-    const currentUser = await useGetCurrentUser();
+  const currentUser =useAppSelector((state) => state.user);
     console.log(currentUser);
+
+    useEffect(() => {
+      console.log(currentUser);
+    }, [currentUser]);
+  const Connected = async () => {
+    
     if (currentUser) {
       return (
         <Link
@@ -55,7 +62,7 @@ const Navbar = () => {
           >
             Search
           </Link>
-          <Suspense fallback={<div>Loading...</div>}>
+         <Suspense fallback={<div>Loading...</div>}>
             <Connected />
           </Suspense>
         </ul>

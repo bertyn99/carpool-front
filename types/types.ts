@@ -30,14 +30,13 @@ export type cardInfo2Type = {
   text: string;
   icon: string;
 };
-
+export type ICredentials = IUser & { tokens: ITokens };
 export type IUser = {
   id: number;
   name: string;
   email: string;
   avatar: string;
   tel: string;
-  tokens: ITokens;
 };
 
 export type ITokens = {

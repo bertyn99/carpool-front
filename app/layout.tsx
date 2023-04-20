@@ -3,6 +3,7 @@ import localFont from "@next/font/local";
 import { getSession } from "@/lib/hook/useGetCurrentUser";
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
+import Providers from "@/components/provider/provider";
 /* import AuthContext from "../lib/context/AuthContext";
  */
 const MontserratAlt1 = localFont({
@@ -43,9 +44,9 @@ const Helvetica = localFont({
 
 interface IProps {
   children: React.ReactNode;
-  session: any;
+  
 }
-export default async function RootLayout({ children, session }: IProps) {
+export default async function RootLayout({ children }: IProps) {
   return (
     <html
       lang="en"
@@ -53,9 +54,11 @@ export default async function RootLayout({ children, session }: IProps) {
     >
       <head />
       <body className="text-dark-green bg-cream">
-        <Navbar />
-        {children}
-        <Footer />
+        <Providers>
+          <Navbar />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
